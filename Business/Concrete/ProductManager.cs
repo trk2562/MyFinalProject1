@@ -32,7 +32,7 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
         //Claim: Bu kullanıcının product.add veya admin claimlerinden birine sahip olması gerekiyor demektir.
-        [SecuredOperation("product.add")]
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
